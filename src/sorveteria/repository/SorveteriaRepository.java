@@ -5,10 +5,15 @@ import sorveteria.model.Produto;
 
 public interface SorveteriaRepository {
 
+	// CRUD
 	public void consultarPorId(int numero);
 	public void listarTodos();
 	public void cadastrar(Produto produto);
 	public void atualizar(Produto produto);
 	public void deletar(int numero);
-	public void reorganizarids(int id);                   
+	
+	// Adicionais
+	public void reorganizarids(int id);
+	public void comprarProduto(int id);
+	void verCarrinho();                   
 }
