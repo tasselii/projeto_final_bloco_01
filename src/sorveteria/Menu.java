@@ -30,6 +30,18 @@ public class Menu {
      Sorvete s2 = new Sorvete(produtos.gerarNumero(), 1, "Napolitano", "Doce", 12.90, "Pote");
      produtos.cadastrar(s2);
 
+     Acai s3 = new Acai(produtos.gerarNumero(), 1, "Açaí Energia", "Banana com Mel", 16.50, "Grande", "Granola, Paçoca", "Adição de proteína");
+     produtos.cadastrar(s3);
+
+     Acai s4 = new Acai(produtos.gerarNumero(), 1, "Açaí Refrescante", "Menta com Chocolate", 14.90, "Pequeno", "Chocoball, Leite em pó", "Sem lactose");
+     produtos.cadastrar(s4);
+
+     Sorvete s5 = new Sorvete(produtos.gerarNumero(), 1, "Chocolate Belga", "Chocolate", 13.90, "Massa");
+     produtos.cadastrar(s5);
+
+     Sorvete s6 = new Sorvete(produtos.gerarNumero(), 1, "Frutas Tropicais", "Abacaxi com Hortelã", 11.90, "Pote");
+     produtos.cadastrar(s6);
+
      while (true) {
     	 System.out.println(Cores.TEXT_CYAN + Cores.ANSI_BLACK_BACKGROUND);
     	 System.out.println("╔═══════════════════════════════════════════════════╗");
@@ -103,9 +115,9 @@ public class Menu {
 
                              switch (tipoAdmin) {
                                  case 1 -> {
-                                     System.out.print("\nDigite o nome do Produto: ");
+                                     System.out.print("\nDigite o marca do Produto: ");
                                      scan.nextLine();
-                                     String nome = scan.nextLine();
+                                     String marca = scan.nextLine();
 
                                      System.out.print("\nDigite o preço do Produto: ");
                                      preco = scan.nextDouble();
@@ -130,7 +142,7 @@ public class Menu {
 
                                              String tipoProduto = (tipoSorvete == 1) ? "Pote" : "Massa";
 
-                                             produtos.cadastrar(new Sorvete(produtos.gerarNumero(), tipo, nome, sabor, preco, tipoProduto));
+                                             produtos.cadastrar(new Sorvete(produtos.gerarNumero(), tipo, marca, sabor, preco, tipoProduto));
                                              System.out.println("\nSorvete cadastrado com sucesso!");
                                          }
 
@@ -144,7 +156,7 @@ public class Menu {
                                              System.out.print("\nDigite observações (ou deixe em branco): ");
                                              String observacoes = scan.nextLine();
 
-                                             produtos.cadastrar(new Acai(produtos.gerarNumero(), tipo, nome, sabor, preco, tamanho, adicionais, observacoes));
+                                             produtos.cadastrar(new Acai(produtos.gerarNumero(), tipo, marca, sabor, preco, tamanho, adicionais, observacoes));
                                              System.out.println("\nAçaí cadastrado com sucesso!");
                                          }
 
@@ -175,9 +187,9 @@ public class Menu {
 
 	        	                	Optional<Produto> atualizarProduto = produtos.buscarNaCollection(numero);
 
-                                     System.out.print("\nDigite o nome do Produto: ");
+                                     System.out.print("\nDigite o marca do Produto: ");
                                      scan.nextLine();
-                                     String nome = scan.nextLine();
+                                     String marca = scan.nextLine();
 
                                      System.out.print("\nDigite o preço do Produto: ");
                                      preco = scan.nextDouble();
@@ -202,7 +214,7 @@ public class Menu {
 
                                              String tipoProduto = (tipoSorvete == 1) ? "Pote" : "Massa";
 
-                                             produtos.atualizar(new Sorvete(produtos.gerarNumero(), tipo, nome, sabor, preco, tipoProduto));
+                                             produtos.atualizar(new Sorvete(produtos.gerarNumero(), tipo, marca, sabor, preco, tipoProduto));
                                          }
 
                                          case 2 -> {
@@ -215,7 +227,7 @@ public class Menu {
                                              System.out.print("\nDigite observações (ou deixe em branco): ");
                                              String observacoes = scan.nextLine();
 
-                                             produtos.atualizar(new Acai(produtos.gerarNumero(), tipo, nome, sabor, preco, tamanho, adicionais, observacoes));
+                                             produtos.atualizar(new Acai(produtos.gerarNumero(), tipo, marca, sabor, preco, tamanho, adicionais, observacoes));
                                          }
 
                                          default -> System.out.println("Tipo inválido!");
@@ -238,16 +250,16 @@ public class Menu {
                                      keyPress();
                                  }
 
-                                 default -> System.out.println("Opção inválida.");
+                                 default -> System.out.println(Cores.TEXT_RED+"Opção inválida.");
                              }
                          }
 
                          break;
                      } else {
                          tentativas--;
-                         System.out.println("Senha incorreta! Tentativas restantes: " + tentativas);
+                         System.out.println(Cores.TEXT_RED+"Senha incorreta! Tentativas restantes: " + tentativas+Cores.TEXT_RESET);
                          if (tentativas == 0) {
-                             System.out.println("Número máximo de tentativas. Acesso negado.");
+                             System.out.println(Cores.TEXT_RED+"Número máximo de tentativas. Acesso negado."+Cores.TEXT_RESET);
                          }
                      }
                  }
@@ -260,7 +272,7 @@ public class Menu {
                  System.exit(0);
              }
 
-             default -> System.out.println("Opção inválida!");
+             default -> System.out.println(Cores.TEXT_RED+"Opção inválida!"+Cores.TEXT_RESET);
          }
      }
  }

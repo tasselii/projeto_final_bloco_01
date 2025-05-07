@@ -6,8 +6,8 @@ public class Sorvete extends Produto {
 	
 	private String tipoProduto; // Pote ou Massa
 
-    public Sorvete(int id, int tipo, String nome, String sabor, double preco, String tipoProduto) {
-		super(id, tipo, nome, sabor, preco);
+    public Sorvete(int id, int tipo, String marca, String sabor, double preco, String tipoProduto) {
+		super(id, tipo, marca, sabor, preco);
 		this.tipoProduto = tipoProduto;
 	}
 
@@ -23,7 +23,7 @@ public class Sorvete extends Produto {
     public void visualizar() {
 		System.out.println("🍨 Sorvete #" + this.id);
 		System.out.println();
-		System.out.println("Nome: " + this.nome);
+		System.out.println("Marca: " + this.marca);
 		System.out.println("Sabor: " + this.sabor);
 		System.out.println("Tipo: " + this.tipoProduto);
 		System.out.printf("Preço: R$ %.2f\n", this.preco);

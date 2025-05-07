@@ -5,15 +5,15 @@ import java.text.NumberFormat;
 public abstract class Produto {
 	
     protected int id, tipo;
-    protected String nome;
+    protected String marca;
     protected String sabor;
     protected double preco;
     
-    public Produto(int id, int tipo, String nome, String sabor, double preco) {
+    public Produto(int id, int tipo, String marca, String sabor, double preco) {
 		super();
 		this.id = id;
 		this.tipo = tipo;
-		this.nome = nome;
+		this.marca = marca;
 		this.sabor = sabor;
 		this.preco = preco;
 	}
@@ -26,12 +26,20 @@ public abstract class Produto {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public int getTipo() {
+		return tipo;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
 	}
 
 	public String getSabor() {
@@ -49,14 +57,6 @@ public abstract class Produto {
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
-	
-	public int getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(int tipo) {
-		this.tipo = tipo;
-	}
 
 	public void visualizar() {
 		
@@ -69,7 +69,7 @@ public abstract class Produto {
 	    };
 
 	    System.out.println("ID: " + this.id);
-	    System.out.println("Nome: " + this.nome);
+	    System.out.println("Marca: " + this.marca);
 	    System.out.println("Tipo: " + tipoStr);
 	    System.out.println("Sabor: " + this.sabor);
 	    System.out.println("Preço: " + nfMoeda.format(this.preco));

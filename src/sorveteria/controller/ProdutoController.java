@@ -84,7 +84,7 @@ public class ProdutoController implements SorveteriaRepository {
 	        Produto produtoSelecionado = produto.get();
 	        if (listaProdutos.remove(produtoSelecionado)) {
 	            listaCompras.add(produtoSelecionado);
-	            System.out.printf("\n%s comprado com sucesso.\n", produtoSelecionado.getNome());
+	            System.out.printf("\n%s comprado com sucesso.\n", produtoSelecionado.getMarca());
 	        } else {
 	            System.out.printf("\nO produto com ID %d não foi encontrado na lista de produtos.\n", id);
 	        }

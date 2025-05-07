@@ -11,9 +11,9 @@ public class Acai extends Produto {
     private String adicionais;
     private String observacoes;
 
-	public Acai(int id, int tipo, String nome, String sabor, double preco, String tamanho, String adicionais,
+	public Acai(int id, int tipo, String marca, String sabor, double preco, String tamanho, String adicionais,
 			String observacoes) {
-		super(id, tipo, nome, sabor, preco);
+		super(id, tipo, marca, sabor, preco);
 		this.tamanho = tamanho;
 		this.adicionais = adicionais;
 		this.observacoes = observacoes;
@@ -49,7 +49,7 @@ public class Acai extends Produto {
 	public void visualizar() {
 	    System.out.println("🍧 Açaí #" + this.id);
 	    System.out.println();
-	    System.out.println("Nome: " + this.nome);
+	    System.out.println("Marca: " + this.marca);
 	    System.out.println("Sabor: " + this.sabor);
 	    System.out.printf("Preço: R$ %.2f\n", this.preco);
 	    System.out.println("Tamanho: " + this.tamanho);
