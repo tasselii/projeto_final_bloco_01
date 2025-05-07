@@ -15,5 +15,8 @@ public interface SorveteriaRepository {
 	// Adicionais
 	public void reorganizarids(int id);
 	public void comprarProduto(int id);
-	void verCarrinho();                   
+	public void verCarrinho();   
+	public void calcularLucro();
+	public long quantidade();
+	
 }

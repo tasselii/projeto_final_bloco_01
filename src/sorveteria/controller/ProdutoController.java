@@ -22,7 +22,7 @@ public class ProdutoController implements SorveteriaRepository {
 		if(produto.isPresent())
 			produto.get().visualizar();
 		else
-			System.out.printf("\nA Conta %d não foi encontrado", id);
+			System.out.printf(Cores.TEXT_RED+"\nA Conta %d não foi encontrado" + Cores.TEXT_RESET , id);
 		
 	}
 
@@ -36,7 +36,7 @@ public class ProdutoController implements SorveteriaRepository {
 	        
 	        listaProdutos.forEach(p -> {
 	            if (p.getTipo() != 1 && p.getTipo() != 2) {
-	                System.out.println("Tipo Inválido:");
+	                System.out.println(Cores.TEXT_RED+"\nTipo Inválido:"+ Cores.TEXT_RESET);
 	            }
 	            p.visualizar();
 	        });        
@@ -59,7 +59,7 @@ public class ProdutoController implements SorveteriaRepository {
 
 	        System.out.println("\nProduto atualizado com sucesso:\n");
 	        produto.visualizar();
-	        System.out.println("Produto Atualizado! ✅\n");
+	        System.out.println("\nProduto Atualizado! ✅\n");
 	    } 
 	}
 
@@ -84,11 +84,25 @@ public class ProdutoController implements SorveteriaRepository {
 	        Produto produtoSelecionado = produto.get();
 	        if (listaProdutos.remove(produtoSelecionado)) {
 	            listaCompras.add(produtoSelecionado);
-	            System.out.printf("\n%s comprado com sucesso.\n", produtoSelecionado.getMarca());
+	            System.out.printf(Cores.TEXT_GREEN+"\n%s comprado com sucesso.\n" + Cores.TEXT_RESET, produtoSelecionado.getMarca());
 	        } else {
-	            System.out.printf("\nO produto com ID %d não foi encontrado na lista de produtos.\n", id);
+	            System.out.printf(Cores.TEXT_RED+"\nO produto com ID %d não foi encontrado na lista de produtos.\n" + Cores.TEXT_RESET, id);
 	        }
 	    }
+	}
+	
+	@Override
+	public void calcularLucro() {
+	    double soma = listaCompras.stream()
+	        .mapToDouble(Produto::getPreco)
+	        .sum();
+
+	    System.out.printf(Cores.TEXT_GREEN + "\nLucro Bruto: R$ %.2f\n" + Cores.TEXT_RESET, soma);
+	}
+	
+	@Override
+	public long quantidade() {
+	    return listaCompras.stream().count();
 	}
 
 	@Override
@@ -115,7 +129,7 @@ public class ProdutoController implements SorveteriaRepository {
 	    if (listaCompras.isEmpty()) {
 	        System.out.println(Cores.TEXT_RED + "\nNenhum produto foi Comprado.\n" + Cores.TEXT_RESET);
 	    } else {
-	        System.out.println(Cores.TEXT_WHITE_BRIGHT + "\n*** Compras Realizadas ***");
+	        System.out.println(Cores.TEXT_GREEN_BRIGHT + "\n*** Compras Realizadas ***");
 	        System.out.println(Cores.TEXT_BLUE_BRIGHT + "-------------------------------" + Cores.TEXT_WHITE_BRIGHT);
 
 	        for (Produto p : listaCompras) {
@@ -124,4 +138,7 @@ public class ProdutoController implements SorveteriaRepository {
 	        }
 	    }
 	}
+
+	
+
 }
