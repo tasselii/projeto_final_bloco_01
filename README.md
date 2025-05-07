@@ -1,4 +1,4 @@
-# 🍨 Projeto Sorveteria - Sistema de Gerenciamento em Java
+# 🍨 Projeto Sorveteria - Sistema de Gerenciamento
 
 Bem-vindo ao sistema de gerenciamento de uma Sorveteria, desenvolvido em **Java** com uso de programação orientada a objetos (POO) e boas práticas de estruturação de código. O projeto simula um sistema de compras e controle de produtos (sorvetes e açaís), com diferenciação entre clientes e administradores.
 
