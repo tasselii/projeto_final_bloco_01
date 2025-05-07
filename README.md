@@ -16,7 +16,7 @@ Este projeto tem como objetivo aplicar os conceitos de:
 
 ### 👥 Modos de Acesso:
 - **Cliente:** Pode visualizar produtos disponíveis e realizar compras.
-- **Administrador (com senha):** Pode gerenciar os produtos.
+- **Administrador (com senha = "123"):** Pode gerenciar os produtos.
 
 ### 🧑‍💼 Módulo Admin:
 - Cadastrar novo produto (Sorvete ou Açaí)
