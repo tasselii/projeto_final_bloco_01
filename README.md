@@ -87,7 +87,7 @@ Esses obstáculos foram essenciais para me preparar para desafios reais de desen
 ### Clonar e Rodar
 
 ```bash
-git clone https://github.com/tasselii/sorveteria-admin.git
+git clone https://github.com/tasselii/projeto_final_bloco_01.git
 ```
 
 ## 📬 Contato
