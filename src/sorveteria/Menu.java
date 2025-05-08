@@ -297,13 +297,13 @@ public class Menu {
  public static void exibirMenuInicio() {
      System.out.println(Cores.TEXT_CYAN + Cores.ANSI_BLACK_BACKGROUND);
      System.out.println("╔═══════════════════════════════════════════════════╗");
-     System.out.println("║" + Cores.TEXT_CYAN + Cores.ANSI_BLACK_BACKGROUND + "          ❄️  MENU ADMIN - SORVETERIA  ❄️          " + Cores.TEXT_CYAN + "║");
+     System.out.println("║" + Cores.TEXT_CYAN + Cores.ANSI_BLACK_BACKGROUND + "              ❄️  MENU - SORVETERIA  ❄️            " + Cores.TEXT_CYAN + "║");
      System.out.println("╠═══════════════════════════════════════════════════╣");
      System.out.println("║" + Cores.TEXT_WHITE + Cores.ANSI_BLACK_BACKGROUND + " 1 - Entrar como Cliente                           " + Cores.TEXT_CYAN + "║");
      System.out.println("║" + Cores.TEXT_WHITE + Cores.ANSI_BLACK_BACKGROUND + " 2 - Entrar como Admin                             " + Cores.TEXT_CYAN + "║");
      System.out.println("║" + Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND + " 0 - Sair                                          " + Cores.TEXT_CYAN + "║");
      System.out.println("║" + Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND + "                                                   " + Cores.TEXT_CYAN + "║");
-     System.out.println("║" + Cores.TEXT_WHITE + Cores.ANSI_BLACK_BACKGROUND + " Selecione uma opção do menu (0 a 6):        " + Cores.TEXT_CYAN + "      ║");
+     System.out.println("║" + Cores.TEXT_WHITE + Cores.ANSI_BLACK_BACKGROUND + " Selecione uma opção do menu (0 a 2):        " + Cores.TEXT_CYAN + "      ║");
      System.out.println("╚═══════════════════════════════════════════════════╝" + Cores.TEXT_RESET);
  }
 
